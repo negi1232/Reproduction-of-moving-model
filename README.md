@@ -20,8 +20,8 @@
 
 ・逆強化学習を実行
   jsonから変換したデータベースファイルを、移動モデルの逆強化学習フォルダ内に移動しstart.bat(windows専用)を実行する。この時main.py内の30.31行目の
-        state_features = np.vstack([self.state_to_feature2(s)
-                                   for s in range(self.n_states)])
+```        state_features = np.vstack([self.state_to_feature2(s)for s in range(self.n_states)])```
+
   の"self.state_to_feature"が"self.state_to_feature"であれば、報酬=thetaとして計算する。また、self.state_to_feature2"に変更することで、報酬=theta×fs(平均訪問回数)として逆強化学習を実行する。
   
   start.batを起動後は、実験名を入力しEnterを押すことで24個のコマンドプロンプロが起動し各時間に対して逆強化学習が行われる。
@@ -39,7 +39,7 @@
 
 
 ## 実行環境
-・python 3.8.8
+・python 3.8.8<br>
 ・モジュール  requirements.txtを参照
 
 ## 実行方法

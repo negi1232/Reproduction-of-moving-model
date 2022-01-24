@@ -63,13 +63,13 @@
 ## 実行手順
 ./事前データの準備/ にロケーション履歴.jsonを配置<br>
 
-python json2db.py でプログラムを実行<br>
+``` python json2db.py```  でプログラムを実行<br>
 
 ./事前データの準備/data.db を./移動モデルの逆強化学習/ 内にコピー<br>
 
 ./移動モデルの逆強化学習/start.batを起動する<br>
 
-start.bat<br>
+``` start.bat``` <br>
 
 実験名を入力しEnterを押すと処理が開始される(処理にリソースを取られるため、作業中のファイルを保存すること)<br>
 
@@ -79,19 +79,20 @@ result内に実験名のフォルダが生成され中に各時間での結果�
 1つにまとめたフォルダを ./移動モデルの強化学習/input_data に移動する。<br>
 ./移動モデルの強化学習/network.py内の20行目<br>
 wb = openpyxl.load_workbook("./input_data/ex_01_exe_fs/result"+str(n)+".xlsx")<br>
-の./input_data/"ここをフォルダ名に書き換える"/result"+str(n)+".xlsx<br>
-"ここをフォルダ名に書き換える"を指定したいフォルダ名に書き換えてから、./移動モデルの強化学習/main.dbを削除し各時間の移動経路と報酬を計算する<br>
-python network.py  でプログラムを実行<br>
+の ex_01_exe_fs の部分をフォルダ名に書き換えてから、./移動モデルの強化学習/main.dbを削除し各時間の移動経路と報酬を計算する<br>
+
+``` python network.py```   でプログラムを実行<br>
 
 計算した経路を用いて強化学習を行う<br>
-python main.py   でプログラムを実行<br>
+
+``` python main.py```    でプログラムを実行<br>
 
 結果の可視化を行う<br>
 ./移動モデルの強化学習/visualization.py内の115行目<br>
 ``` wb = openpyxl.load_workbook("./input_data/ex_01_exe_fs/result"+str(h)+".xlsx")``` <br>
 内の ex_01_exe_fs の部分を可視化したいフォルダ名に書き換え<br>
 
-python visualization.py でプログラムを実行<br>
+``` python visualization.py```  でプログラムを実行<br>
 
 結果を可視化した動画が、./移動モデルの強化学習/result内に保存される。<br>
 
